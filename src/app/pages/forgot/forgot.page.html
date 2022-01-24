@@ -1,0 +1,53 @@
+<ion-content>
+  <div class="main_content_div">
+    
+    <div style="margin-top: 60%;">
+      <div *ngIf="div_type === 1">
+      <ion-label class="head_lbl">Recover Password</ion-label>
+
+      <ion-input type="text" placeholder="Email Address" [(ngModel)]="email">
+        <ion-icon name="mail" slot="icon-only"></ion-icon>
+      </ion-input>
+
+     
+
+      <ion-button type="submit" expand="block" [disabled]="loggedIn" (click)="sendOTP()">
+        <span *ngIf="!loggedIn">Send OTP</span>
+                <ion-spinner name="circles" *ngIf="loggedIn"></ion-spinner>
+      </ion-button>
+
+   </div>
+
+   <div *ngIf="div_type === 2">
+    <ion-input type="number" placeholder="OTP" [(ngModel)]="otp">
+      <ion-icon name="key" slot="icon-only"></ion-icon>
+    </ion-input>
+
+    <ion-button expand="block" [disabled]="loggedIn" (click)="verifyOTP()">
+      <span *ngIf="!loggedIn"> {{util.getString('Verify OTP')}} </span>
+      <ion-spinner name="circular" *ngIf="loggedIn"></ion-spinner>
+    </ion-button>
+  </div>
+
+  <div *ngIf="div_type === 3">
+    <ion-input type="password" placeholder="New Password" [(ngModel)]="password">
+      <ion-icon name="key" slot="icon-only"></ion-icon>
+    </ion-input>
+    <ion-input type="password" placeholder="Confirm Password" [(ngModel)]="repass">
+      <ion-icon name="key" slot="icon-only"></ion-icon>
+    </ion-input>
+
+    <ion-button expand="block" [disabled]="loggedIn" (click)="sendEmail()">
+      <span *ngIf="!loggedIn"> {{util.getString('Reset Password')}} </span>
+      <ion-spinner name="circular" *ngIf="loggedIn"></ion-spinner>
+    </ion-button>
+  </div>
+
+    </div>
+
+    <div class="bottom_div">
+      <ion-label (click)="goToLogin()">Already have an account ? <span style="color: var(--ion-color-tetiary); font-size: 18px;">Sign In</span></ion-label>
+    </div>
+
+  </div>
+</ion-content>

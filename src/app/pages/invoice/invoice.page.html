@@ -1,0 +1,99 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>analysis-report</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div class="main_content_div">
+
+    <div class="user_div">
+      
+      <ion-buttons slot="start" class="menu_btn">
+        <ion-menu-button color="light"></ion-menu-button>
+      </ion-buttons>
+
+      <ion-label>Confirm Payment</ion-label>
+     
+      
+    </div>
+
+    <div class="content_div">
+      <div *ngIf="!loaded" style="display: flex;flex-direction: column;justify-content: center;align-items: center;">
+        <ion-spinner color="primary" name="crescent"></ion-spinner>
+      </div>
+   
+      <div class="subject_content">
+       
+        <ion-card *ngIf="loaded">
+       
+          <div class="container">
+            <h1>{{userDetails.username}}
+              <!-- <small>Suite 2, Timeline Bazaar Along Funaab-Alabata Road, Camp</small> -->
+            </h1>
+            <div class="order_details"  *ngFor="let item of policies">
+              <h2>Payment Details</h2>
+              <div class="order_items">
+                <!-- <ng-container *ngIf="item.ctype=='image'">
+                  <div class="coverReal" [style.backgroundImage]="'url('+mediaURL+ this.item.fileUrl+')'">
+                 </div>
+                </ng-container>
+                <br>
+                <ng-container *ngIf="item.ctype=='video'">
+                 
+                    <video [src]="mediaURL+ item.fileUrl" height="200vh" width="320" controls></video>
+    
+                </ng-container> -->
+                
+                <div class="item">
+                  <h3 class="d-flex">
+                    <span class="item_name" style="text-transform: capitalize;">{{item.adTitle}}</span>
+                    <br>
+                    <span class="end item_price ion-text-end" style="text-transform: capitalize;">{{item.adDescription}}</span>
+                  </h3>
+                  <hr style="color: #A020F0;">
+                  <p style="text-transform: capitalize;">Campaign Category: <b style="color: orangered;">{{item.ctype}} Campaign Ads</b></p>
+                  <br>
+                  <p style="text-transform: capitalize;">Transaction ID: <b style="color: black;">{{item.transid}}</b></p>
+                  <br>
+                  <p style="text-transform: capitalize;">Transaction Date: <b style="color: black;">{{item.date_added}}</b></p>
+                  <hr style="border: double;  color: #A020F0;">
+                </div>
+          
+                <div class="grand_total">
+                  <h2 class="d-flex">
+                    <span class="payment_option">Budgeted Amount: </span>
+                    <span class="end ion-text-end"><b>₦{{item.amount | number}}.00</b></span>
+                  </h2>
+                </div>
+              </div>
+            </div>
+           <div>
+
+           
+            <angular4-paystack [email]="email" [amount]="amount * 100" [ref]="random_id" (close)="paymentCancel()" (callback)="paymentDone($event)" >
+              <!-- <angular-rave
+              [customer]="{ email: 'email', phonenumber: 'phone' }"
+              [amount]="amount"
+              [tx_ref]="random_id"
+              (callback)="paymentSuccess($event)"
+              (close)="paymentFailure()"
+              (init)="paymentInit()"> -->
+              <ion-button tappable style="width:100%" expand="block"><ion-icon name="card"></ion-icon>  Pay Now</ion-button>
+
+              <!-- <ion-button tappable style="width:100%" expand="block" (click)="ravePay()"><ion-icon name="card"></ion-icon>  Pay Now</ion-button> -->
+            <!-- </angular-rave> -->
+            </angular4-paystack>
+          </div>           
+         
+          </div>
+       
+        </ion-card>
+
+    </div>
+  </div>
+</div>
+
+</ion-content>
+
+

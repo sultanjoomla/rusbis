@@ -1,0 +1,7 @@
+{
+  "name": "catfish",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

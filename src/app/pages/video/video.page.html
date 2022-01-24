@@ -1,0 +1,52 @@
+<ion-content>
+  <div class="cloes_btn  ion-text-end">
+      <ion-icon name="close" (click)="dismiss()"></ion-icon>
+  </div>
+
+  <ion-card>
+      <div class="img_box">
+          <img src="https://opuslabs.nyc3.digitaloceanspaces.com/AAFixItems/Other/popup_img_head.png">
+      </div>
+
+      <div class="text_box">
+        <div class="video-selection" *ngIf="!selectedVideo">
+          <p>Please select a video for upload from your gallery</p>
+          <ion-button (click)="fileChoose()" expand="block">Select Video</ion-button>
+        </div>
+        
+        <div class="video-section" *ngIf="selectedVideo">
+      
+          <video controls [src]="selectedVideo"></video>
+      
+          <div class="button-options" *ngIf="!uploadedVideo && !isUploading">
+            <button ion-button clear (click)="cancelSelection()">
+              <ion-icon name="close-circle" color="danger"></ion-icon>
+            </button>
+            <button ion-button clear (click)="uploadVideo()">
+              <ion-icon name="checkmark-circle" color="secondary"></ion-icon>
+            </button>
+          </div>
+      
+          <div *ngIf="isUploading">
+            <div class="uploading">
+              <p><ion-spinner name="bubbles"></ion-spinner></p>
+              <!-- <p>Uploading - {{ uploadPercent }}% Complete</p> -->
+            </div>
+            <div class="button-options">
+              <button ion-button clear (click)="cancelUpload()">
+                <ion-icon name="close-circle" color="danger"></ion-icon>
+              </button>
+            </div>
+          </div>
+      
+          <div class="button-options" *ngIf="uploadedVideo">
+            <button ion-button clear (click)="cancelSelection()">
+              Start Over
+            </button>
+          </div>
+      
+        </div>
+      </div>
+      
+  </ion-card>
+</ion-content>

@@ -1,0 +1,71 @@
+
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div class="main_content_div">
+
+    <ion-buttons slot="start" class="menu_btn">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+
+    <div class="user_div">
+      
+      <ion-label>Support</ion-label>
+    </div>
+
+      <div class="content_div">
+        <div *ngIf="!loaded" style="display: flex;flex-direction: column;justify-content: center;align-items: center;">
+          <ion-spinner color="primary" name="crescent"></ion-spinner>
+        </div>
+
+        <div class="main_content_div1" *ngIf="loaded">
+
+          <span *ngFor="let item of messages">
+            <div class="left_div" *ngIf="item.from_id != uid">
+              <div class="inner_div">
+                <div class="msg_div">
+                  <ion-label>{{item.message}}</ion-label>
+                  
+                </div>
+              </div>
+            </div>
+      
+            <div class="right_div" *ngIf="item.from_id == uid">
+              <div class="inner_div">
+                <div class="msg_div">
+                  <ion-label>{{item.message}}</ion-label>
+                  <ng-container *ngIf="item.mstatus=='deliver'">
+                    <ion-icon name="checkmark-outline"></ion-icon>
+                  </ng-container>
+
+                  <ng-container *ngIf="item.mstatus=='read'">
+                    <ion-icon name="checkmark-done-outline"></ion-icon>
+                  </ng-container>
+                  
+                </div>
+              </div>
+      
+            </div>
+          </span>
+        </div>
+        <div *ngIf="!yourMessage && loaded" style="display: flex;flex-direction: row-reverse;padding: 20px;">
+          <ion-spinner name="dots"></ion-spinner>
+        </div>
+      
+
+      </div>
+  </div>
+</ion-content>
+<ion-footer>
+  <div class="footer_div">
+    <ion-input type="text" [(ngModel)]="msg" (keyup.enter)="sendMessage()"
+      placeholder="Type your message here.."></ion-input>
+    <div class="chat_div" (click)="sendMessage()">
+      <ion-icon name="send"></ion-icon>
+    </div>
+  </div>
+</ion-footer>

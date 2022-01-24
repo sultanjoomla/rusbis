@@ -1,0 +1,51 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>analysis-report</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div class="main_content_div">
+
+    <div class="user_div">
+      
+      <ion-buttons slot="start" class="menu_btn">
+        <ion-menu-button color="light"></ion-menu-button>
+      </ion-buttons>
+
+      <ion-label>Contact Us</ion-label>
+     
+      
+    </div>
+
+    <div class="content_div">
+      
+      <div class="subject_content">
+        <!-- <small>NB: Minimum budget for Campaign Ads is <b>₦500.00</b></small> -->
+        <ion-input type="text"  [(ngModel)]="username" disabled>
+          <ion-icon name="briefcase" slot="icon-only"></ion-icon>
+        </ion-input>
+        <!-- <ion-select [(ngModel)]="ctype" interface="action-sheet" mode="ios">
+          <ion-select-option value=""> Campaign Type </ion-select-option>
+          <ion-select-option value="image"> Image </ion-select-option>
+          <ion-select-option value="video"> Video </ion-select-option>
+        </ion-select> -->
+        <ion-input type="text" [(ngModel)]="email" disabled>
+          <ion-icon name="mail" slot="icon-only"></ion-icon>
+        </ion-input>
+       
+        <ion-textarea rows="6" placeholder="Describe your Complain / Enquiry"  [(ngModel)]="message">
+
+        </ion-textarea>
+
+        <ion-button type="submit" expand="block" (click)="submit()" [disabled]="isLogin">
+          <span *ngIf="!isLogin">Submit Message</span>
+                  <ion-spinner name="circles" *ngIf="isLogin"></ion-spinner>
+        </ion-button>
+       </div>
+       </div>
+      
+
+    </div>
+ 
+</ion-content>

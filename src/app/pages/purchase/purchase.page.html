@@ -1,0 +1,112 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>analysis-report</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div class="main_content_div">
+
+    <div class="user_div">
+      
+      <ion-buttons slot="start" class="menu_btn">
+        <ion-menu-button color="light"></ion-menu-button>
+      </ion-buttons>
+
+      <ion-label>Transaction History</ion-label>
+
+      
+    </div>
+
+    <div class="content_div">
+      <ion-refresher slot="fixed" pullFactor="0.5" pullMin="100" pullMax="200" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
+      
+
+      <div class="subject_content">
+        <div *ngIf="!dummy?.length && !orders?.length" class="nothing">
+          <p class="bolder"> {{util.getString('No Tranaction yet, check back later!')}} </p>
+          <img src="assets/imgs/error.png" alt="" srcset="">
+        </div>
+
+        <ion-item *ngFor="let item of dummy">
+          <ion-thumbnail slot="start">
+            <ion-skeleton-text animated style="width: 100%;height: 100px;"></ion-skeleton-text>
+          </ion-thumbnail>
+          <ion-label>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </ion-label>
+      
+        </ion-item>
+
+
+        <!-- <div class="main_content_div1" *ngIf="orders?.length">
+
+
+          <div class="content_div1">
+      
+            <div class="card_div" *ngFor="let item of orders" (click)="goToOrder(item)">
+      
+              <div class="image_div">
+                <img [src]="mediaURL+ item.fileUrl" onError="this.src='assets/imgs/nothing.png'">
+              </div>
+              <div class="desc_div">
+                <ion-label style="font-weight: bold;color: gray;font-size: 12px;"> {{util.getString('Campaign')}} #{{item.adid}}
+                </ion-label>
+                <div class="border_bottom">
+                  <p class="items">
+                    <span>{{item.adTitle}} </span>
+                    
+                    
+                  </p>
+                  <p class="itemss">
+                    <span> {{util.getString('Budgetted Amount')}} </span>
+                    <span> ₦{{item.amount | number}}.00 </span>
+                   
+                  </p>
+                </div>
+                <ion-label class="datetime">{{ item.created_at}}</ion-label>
+              </div>
+              <div class="status">
+                {{item.status}}
+              </div>
+            </div>
+      
+          </div>
+        </div> -->
+      <div *ngIf="orders?.length">
+        <div class="card" *ngFor="let item of orders">
+          <div (click)="goToOrder(item)">
+              <p class="title">Transaction ID<span class="ion-float-right">{{item.adid}}</span></p>
+              <p class="to">Payment Status: <span class="ion-float-right" *ngIf="item.status=='Not Paid'" style="color: red; font-weight:bolder;">{{item.status}}</span>  
+                <span class="ion-float-right" *ngIf="item.status=='Paid'" style="color: green; font-weight:bolder;">{{item.status}}</span>
+              </p>
+              <!-- <p class="from">From: {{item.fname1}}</p> -->
+              <p class="to">Budgetted Amount <span class="ion-float-right">₦{{item.amount | number}}.00</span> </p>
+              <p class="from">Date Created: <span class="ion-float-right">{{item.created_at}}</span></p>
+              <p class="from" *ngIf="item.status=='Paid'">Date Paid: <span class="ion-float-right">{{item.updated_at}}</span></p>
+          </div>
+          <hr>
+          <div class="ion-text-center">
+            <!-- <ng-container *ngIf="item.status=='Paid'">
+              <ion-button expand="full" (click)="printOrder()">Download Receipt</ion-button>
+            </ng-container> -->
+
+            <ng-container *ngIf="item.status=='Not Paid'">
+              <ion-button expand="full" (click)="goToOrder(item)">Pay Invoice</ion-button>
+            </ng-container>
+              
+          </div>
+      </div>
+    </div>
+    
+      </div>
+
+
+
+    </div>
+  </div>
+</ion-content>

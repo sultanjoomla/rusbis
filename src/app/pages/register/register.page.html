@@ -1,0 +1,39 @@
+<ion-content>
+  <div class="main_content_div">
+    <div style="margin-top: 40%;">
+      <ion-label class="head_lbl">Create an Account</ion-label>
+
+      <ion-input type="text" placeholder="Business Name" [(ngModel)]="fname">
+        <ion-icon name="briefcase" slot="icon-only"></ion-icon>
+      </ion-input>
+
+      <ion-input type="text" placeholder="Email Address" [(ngModel)]="email">
+        <ion-icon name="mail" slot="icon-only"></ion-icon>
+      </ion-input>
+
+      <ion-input type="tel" placeholder="Phone Number"   [(ngModel)]="phone">
+        <ion-icon name="call" slot="icon-only"></ion-icon>
+      </ion-input>
+
+
+      <ion-input type="password" placeholder="Password" [(ngModel)]="password">
+        <ion-icon name="key" slot="icon-only"></ion-icon>
+      </ion-input>
+      <ion-input type="password" placeholder="Confirm Password"  [(ngModel)]="password2">
+        <ion-icon name="key" slot="icon-only"></ion-icon>
+      </ion-input>
+
+      <ion-button type="submit" expand="block" (click)="login()" [disabled]="loggedIn">
+        <span *ngIf="!loggedIn"> Sign Up</span>
+                <ion-spinner name="circles" *ngIf="loggedIn"></ion-spinner>
+       
+      </ion-button>
+    </div>
+
+
+    <div class="bottom_div">
+      <ion-label (click)="goToLogin()">Already have an account ? <span style="color: var(--ion-color-tetiary); font-size: 18px;">Sign In</span></ion-label>
+    </div>
+
+  </div>
+</ion-content>

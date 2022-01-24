@@ -1,0 +1,80 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>analysis-report</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div class="main_content_div">
+
+    <div class="user_div">
+      
+      <ion-buttons slot="start" class="menu_btn">
+        <ion-menu-button color="light"></ion-menu-button>
+      </ion-buttons>
+
+      <ion-label>Business Information</ion-label>
+     
+      
+    </div>
+
+    <div class="content_div">
+      
+
+        <!-- <ion-button (click)="edit_flag = !edit_flag" *ngIf="edit_flag">
+          <ion-icon slot="icon-only" name="pencil"></ion-icon>
+        </ion-button> -->
+        
+      <!-- <ion-label class="head_lbl">Kindly provide accurate information</ion-label> -->
+      
+      <div class="subject_content">
+        <ion-badge color="warning" (click)="edit_flag = !edit_flag" *ngIf="edit_flag">Edit Update Business Information</ion-badge>
+
+        <div class="coverPlaceholder" (click)="cover()" *ngIf="!coverImage || coverImage ==''">
+          <ion-icon name="cloud-upload-outline" color="primary"></ion-icon>
+          <p> Upload Business logo here! </p>
+        </div>
+        <div class="coverReal"  [style.backgroundImage]="'url('+mediaURL+ coverImage+')'"
+          *ngIf="coverImage && coverImage !=''">
+          <ion-badge color="warning" [disabled]="edit_flag" (click)="cover()">Tap to Change Logo</ion-badge>
+        </div>
+
+        <ion-input type="text" [disabled]="edit_flag" [(ngModel)]="bphone" placeholder="Business Phone Number">
+          <ion-icon name="call" slot="icon-only"></ion-icon>
+        </ion-input>
+       
+        
+
+        <ion-input type="text" [(ngModel)]="ccCode" placeholder="Business Location" readonly>
+        
+          <ion-icon name="pin" slot="end"></ion-icon>
+        </ion-input>
+        <ng-container *ngIf="ccCode ==''">
+
+          <ion-badge color="tertiary" (click)="openCountry()">Change State</ion-badge>
+         </ng-container> 
+
+       
+
+        
+        <ion-textarea rows="6" [disabled]="edit_flag" [(ngModel)]="binfo" placeholder="Describe your Business Information">
+
+        </ion-textarea>
+
+        <ion-textarea rows="6" [disabled]="edit_flag" [(ngModel)]="baddress" placeholder="Business Address">
+
+        </ion-textarea>
+
+        <ion-button type="submit" expand="block" (click)="submit()" [disabled]="isLogin">
+          <span *ngIf="!isLogin">Submit</span>
+                  <ion-spinner name="circles" *ngIf="isLogin"></ion-spinner>
+        </ion-button>
+     
+      
+      </div>
+
+
+
+    </div>
+  </div>
+</ion-content>

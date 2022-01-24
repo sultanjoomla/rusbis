@@ -1,0 +1,161 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div class="main_content_div">
+
+    <div class="gradient_div">
+        <div class="abs_round"></div>
+        <div class="flex_header">
+            <ion-label>{{userDetails.username}}</ion-label>
+
+           
+              <img [src]="pp" onError="this.src='/assets/imgs/courier.png'">
+          
+            <!-- <ng-container *ngIf="userDetails.image === ''">
+              <div class="user_back" [style.backgroundImage]="'url(../../../assets/imgs/courier.png)'"></div>
+            </ng-container> -->
+        </div>
+    </div>
+
+    <div class="container_div">
+
+        <div class="white_box">
+            <div class="flex_div">
+                <!-- <ion-label class="span_lbl">for <span>Axess Platinum</span> Card</ion-label>
+                <ion-label class="bold_lbl" (click)="goToAddBudget()">Add Budget</ion-label> -->
+            </div>
+
+            <ion-slides mode="ios" pager="ios" scrollbar="ios">
+                <ion-slide>
+                    <div>
+                        <div class="half-circle">
+                            <div class="inner_circle">
+                           
+                                <img src="assets/imgs/rus.png">
+                                <ion-label class="grey_lbl">You Have Spent</ion-label>
+                              
+                                <ion-label class="price_lbl">₦{{total | number : '1.2-2'}}</ion-label>
+                                <ion-label class="grey_lbl">on <b>RUS</b> Campaign</ion-label>
+                            </div>
+                        </div>
+                        <div class="abs_div">
+                            <!-- <ion-label>0%</ion-label>
+                            <ion-label>100%</ion-label> -->
+                        </div>
+                    </div>   
+                </ion-slide>
+            </ion-slides>
+
+            <!-- <div class="half-circle">
+                <div class="inner_circle">
+                    <img src="assets/imgs/card_2.png">
+                    <ion-label class="#77869E_lbl">You Are Spent</ion-label>
+                    <ion-label class="price_lbl">$6,390</ion-label>
+                    <ion-label class="#77869E_lbl">of $3,248</ion-label>
+                </div>
+            </div>
+            <div class="abs_div">
+                <ion-label>0%</ion-label>
+                <ion-label>100%</ion-label>
+            </div> -->
+
+        </div>
+
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="6" >
+              <div class="col_div" (click)="goToSite()">
+                <ion-icon name="megaphone"></ion-icon>
+                <ion-label>Create Campaign</ion-label>
+              </div>
+            </ion-col>
+            <ion-col size="6" >
+              <div class="col_div" (click)="harvest()">
+                <ion-icon name="file-tray-stacked-outline"></ion-icon>
+                <ion-label>Active Campaign</ion-label>
+              </div>
+            </ion-col>
+            <ion-col size="6" >
+              <div class="col_div" (click)="expired()">
+                <ion-icon name="close-circle"></ion-icon>
+                <ion-label>Expired Campaign</ion-label>
+              </div>
+            </ion-col>
+            <!-- <ion-col size="6" >
+              <div class="col_div" (click)="history()">
+                <ion-icon name="stats-chart-outline"></ion-icon>
+                <ion-label>Transaction History</ion-label>
+              </div>
+            </ion-col> -->
+            
+            <ion-col size="6" >
+              <div class="col_div" (click)="follow()">
+                <ion-icon name="people"></ion-icon>
+                <ion-label>Followers</ion-label>
+              </div>
+            </ion-col>
+
+            <!-- <ion-col size="6" >
+              <div class="col_div" (click)="update()">
+                <ion-icon name="briefcase"></ion-icon>
+                <ion-label>Business Settings</ion-label>
+              </div>
+            </ion-col> -->
+           
+            
+          </ion-row>
+        </ion-grid>
+       
+      
+    </div>
+
+</div>
+
+</ion-content>
+
+
+
+
+
+<!-- <ion-content>
+  <div class="main_content_div">
+
+    <ion-buttons slot="start" class="menu_btn">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+
+    <div class="user_div">
+      <div class="first_div">
+        <ion-label class="welcome">welcome,</ion-label>
+        <ion-label class="username">{{userDetails.username}}</ion-label>
+       <ion-label class="username1">Today's Date : {{today | date}}</ion-label> -->
+      <!-- </div>
+      <ng-container *ngIf="userDetails.image !== ''">
+        <div class="user_back" [style.backgroundImage]="'url('+ pp +')'"></div>
+      </ng-container>
+      <ng-container *ngIf="userDetails.image === ''">
+        <div class="user_back" [style.backgroundImage]="'url(../../../assets/imgs/courier.png)'"></div>
+      </ng-container>
+     
+    </div>
+
+      <div class="content_div"> -->
+        <!-- <ion-label class="hello_lbl">Dashboard</ion-label> -->
+
+        <!-- <ion-grid fixed>
+         
+        </ion-grid>
+
+      </div>
+  </div>
+</ion-content> --> 

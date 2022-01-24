@@ -1,0 +1,96 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>profile</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div class="main_content_div">
+
+    <ion-buttons slot="start" class="menu_btn">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+
+    <div class="user_div">
+      <div class="first_div">
+        <ion-label class="username">{{userDetails.username}}</ion-label>
+      </div>
+      <ng-container *ngIf="userDetails.image !== ''">
+        <div class="user_back" [style.backgroundImage]="'url('+ pp +')'"></div>
+      </ng-container>
+      <ng-container *ngIf="userDetails.image === ''">
+        <div class="user_back" [style.backgroundImage]="'url(../../../assets/imgs/courier.png)'"></div>
+      </ng-container>
+    </div>
+
+    <div class="content_div">
+
+
+      
+
+        <div class="main_div">
+    
+          <div class="info_div">
+    
+            <div class="name">
+              <div class="image_div">
+                <ion-icon name="person-outline"></ion-icon>
+              </div>
+              <div class="content_div">
+                <ion-input type="text" [placeholder]="util.getString('Full name')" [(ngModel)]="contact.name">
+                </ion-input>
+              </div>
+            </div>
+    
+    
+            <div class="name">
+              <div class="image_div">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
+              <div class="content_div">
+                <ion-input type="text" [placeholder]="util.getString('Email')" [(ngModel)]="contact.email">
+                </ion-input>
+              </div>
+            </div>
+    
+            <div class="name">
+              <div class="content_div">
+                <ion-textarea row="8" type="text" [placeholder]="util.getString('Message')" [(ngModel)]="contact.message">
+                </ion-textarea>
+              </div>
+            </div>
+            <ion-button (click)="submit()" expand="block" fill="clear" shape="round">
+              {{util.getString('Submit')}}
+            </ion-button>
+          </div>
+        </div>
+      </div>
+      <div class="flex_box">
+        <ion-icon name="home-outline"></ion-icon>
+        <label> Address
+        </label>
+      </div>
+      <div class="flex_box">
+        <ion-icon name="home-outline"></ion-icon>
+        <label> Lagos, Nigeria
+        </label>
+      </div>
+      <div class="flex_box" >
+        <ion-icon name="mail-open-outline"></ion-icon>
+        <label> support@renturstatus.com </label>
+      </div>
+      <div class="flex_box">
+        <ion-icon name="call-outline"></ion-icon>
+        <label> 08034055242 </label>
+      </div>
+      <div class="flex_box">
+        <ion-icon name="print-outline"></ion-icon>
+        <label for=""> info@renturstatus.com </label>
+      </div>
+    
+
+  
+
+  </div>
+
+</ion-content>

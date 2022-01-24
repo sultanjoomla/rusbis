@@ -1,0 +1,310 @@
+
+
+.main_content_div{
+    width: 100%;
+
+    ion-label {
+        display: block;
+    }
+    .user_div{
+        padding: 20px;
+        width: 100%;
+        height: 260px;
+        background: linear-gradient( to right, #A020F0, #0665AC);
+        padding-top: 40px;
+        .menu_btn{
+            // font-size: 25px;
+            color: white;
+            position: absolute;
+        }
+
+        ion-label {
+            display: block;
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .track_lbl{
+            color: white;
+            display: block;
+            text-align: left;
+            font-weight: normal;
+            margin-top: 20px;
+        }
+    }
+    .card {
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: 0px 0px 20px 1px #eeeeee;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-bottom: 16px;
+        padding-left: 20px;
+        padding-right: 20px;
+        .title {
+            font-size: 15px;
+            font-family: 'proxi-bold';
+            padding-left: 12px;
+            padding-right: 12px;
+            margin-bottom: 4px;
+            font-weight: bold;
+            span {
+                color: var(--gray-color);
+                font-family: 'proxi-regular';
+            }
+        }
+        .status {
+            font-size: 13px;
+            font-family: 'proxi-regular';
+            color: #D9650C;
+            padding-left: 12px;
+            margin-top: 0px;
+        }
+        .status2 {
+            font-size: 13px;
+            font-family: 'proxi-regular';
+            color: #0CD97A;
+            padding-left: 12px;
+            margin-top: 0px;
+        }
+        .from {
+            font-size: 13px;
+            font-family: 'proxi-regular';
+            padding-left: 12px;
+            padding-top: 0px;
+            margin-bottom: 0px;
+        }
+        .to {
+            margin-top: 10px;
+            font-size: 13px;
+            font-family: 'proxi-regular';
+            padding-left: 12px;
+            span {
+                font-family: 'proxi-bold';
+                color: var(--gray-color);
+                padding-right: 15px;
+            }
+        }
+        hr {
+            height: 0px;
+            background-color: #eeeeee;
+            border: 1px solid #eeeeee;
+            margin-top: 30px;
+        }
+        ion-button {
+            font-size: 13px;
+            font-family: 'proxi-regular';
+        
+            margin-bottom: 0px;
+            text-transform: capitalize;
+            --border-radius: 20px;
+           
+            --background: linear-gradient( to right, #A020F0, #0665AC);
+        }
+    }
+    .nothing{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+        .imgs{
+            height: 100px;
+            width: 100px;
+        }
+        .bolder{
+            text-align: center;
+            font-weight: bold;
+        }
+    }
+    .content_div{
+        background: white;
+        width: 100%;
+        border-top-left-radius: 75px;
+        margin-top: -170px;
+        padding: 20px;
+        height: 300px;
+
+        .test{
+            height: 50px;
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+        }
+    
+        .active{
+            border-bottom: 3px solid var(--ion-color-primary);
+            color: var(--ion-color-primary) !important;
+        }
+    
+        .active2{
+            color: var(--ion-color-primary) !important;
+        }
+    
+        .chips_div{
+            display: flex;
+            flex-direction: row;
+            overflow: scroll;
+            border-bottom: 1px solid lightgray;
+            .chip{
+                
+                white-space: nowrap;
+                color: gray;
+                font-size: 14px;
+                font-weight: bold;
+            }  
+        }
+
+        .subject_content{
+
+            padding-top: 20px;
+            .title_lbl{
+                
+                text-align: center;
+                font-size: 22px;
+                font-weight: 500;
+                margin-bottom: 20px;
+            }
+
+            .flex_div{
+                display: flex;
+                width: 100%;
+                align-items: center;
+                border-bottom: 1px solid lightgray;
+                padding-bottom: 20px;
+
+                .progress_div{
+                    padding-left: 20px;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    height: 120px;
+                    ion-label {
+                        margin-bottom: 3px;
+                        font-size: 13px;
+                    }
+
+                    .p1{
+                        --progress-background: #0665AC;
+                    }
+                    .p2{
+                        --progress-background: var(--ion-color-warning);
+                    }
+                    .p3{
+                        --progress-background: #e03d60;
+                    }
+                }
+            }
+
+            ion-grid{
+                padding: 0;
+                margin-top: 20px;
+
+                ion-row{
+                    text-align: center;
+
+                    .simple{
+                        font-size: 13px;
+                    }
+                    .bold_lbl{
+                        font-size: 13px;
+                        font-weight: 600;
+                    }
+                }
+            }
+
+         
+        }
+    }
+}
+
+.main_content_div1{
+    width: 100%;
+    padding: 5px;
+    padding-bottom: 70px;
+
+    ion-label {
+        display: block;
+    }
+
+    .top_lbl{
+        font-size: 25px;
+        font-family: muli-bold;
+        margin-bottom: 10px;
+    }
+
+    .content_div1{
+        padding: 10px 0px;
+
+        .card_div{
+            padding: 10px;
+            display: flex;
+            border-radius: 10px;
+            box-shadow: 0px 3px 6px rgba(0,0,0,0.5);
+            position: relative;
+            margin-bottom: 16px;
+    
+            .image_div{
+                height: 80px;
+                width: 80px;
+                min-width: 80px;
+                padding-right: 10px;
+                img{
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+            }
+
+            .status{
+                position: absolute;
+                right: 0;
+                bottom: 0px;
+                padding: 5px;
+                background: var(--ion-color-primary);;
+                border-bottom-right-radius: 5px;
+                color: white;
+                text-transform: uppercase;
+                font-size: 12px;
+                font-weight: bold;
+            }
+    
+            .desc_div{
+                width: 100%;
+                .border_bottom{
+                    padding-bottom: 10px;
+                    width: 100%;
+                    .items{
+                        margin: 0px;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        font-size: 12px;
+                        font-weight: bold;
+                        padding-bottom: 5px;
+                        border-bottom: .5px dashed lightgray;
+                        margin-bottom: 5px;
+                    }
+                    .itemss{
+                        margin: 0px;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        font-size: 12px;
+                        font-weight: bold;
+                        margin-bottom: 5px;
+                    }
+                }
+                
+                .datetime{
+                    font-size: 12px;
+                    font-weight: bold;
+                }
+               
+                
+            }
+        }
+    }
+}

@@ -1,0 +1,101 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>analysis-report</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div class="main_content_div">
+
+    <div class="user_div">
+      
+      <ion-buttons slot="start" class="menu_btn">
+        <ion-menu-button color="light"></ion-menu-button>
+      </ion-buttons>
+
+      <ion-label>Renew Campaign - #{{id}}</ion-label>
+     
+      
+    </div>
+
+    <div class="content_div">
+      
+      <!-- <ion-label class="head_lbl">Set Campaign Details</ion-label> -->
+      
+      <div class="subject_content">
+        <!-- <small>NB: Minimum budget for Campaign Ads is <b>₦500.00</b></small> -->
+        <ion-input type="text" [(ngModel)]="ctitle" placeholder="Campaign Title" readonly>
+          <ion-icon name="megaphone" slot="icon-only"></ion-icon>
+        </ion-input>
+        <!-- <ion-select [(ngModel)]="ctype" interface="action-sheet" mode="ios" (ionChange)="onCountryInput($event)"> -->
+          <ion-label> Campaign Type</ion-label>
+          <ion-input type="text" [(ngModel)]="ctype" style="text-transform: capitalize;" readonly>
+            <ion-icon name="expand" slot="icon-only"></ion-icon>
+          </ion-input>
+        <ion-input type="text" [(ngModel)]="url" placeholder="Website / Social Media Link">
+          <ion-icon name="globe" slot="icon-only"></ion-icon>
+        </ion-input>
+       
+        <ion-input type="tel"  [(ngModel)]="amount" placeholder="Budget Amount">
+          <ion-icon name="card-outline" slot="icon-only"></ion-icon>
+        </ion-input>
+        <ion-textarea rows="6" placeholder="Describe your Campaign"  [(ngModel)]="bdescription" readonly>
+
+        </ion-textarea>
+        <!-- <div class="video-section" *ngIf="selectedVideo">
+
+  
+
+    <div class="button-options" *ngIf="!uploadedVideo && !isUploading">
+      <button ion-button clear (click)="cancelSelection()">
+        <ion-icon name="close-circle" color="danger">Cancel</ion-icon>
+      </button>
+      <button ion-button clear (click)="uploadVideo()">
+        <ion-icon name="checkmark-circle" color="secondary">Upload Video</ion-icon>
+      </button>
+    </div>
+
+    <div *ngIf="isUploading">
+      <div class="uploading">
+        <p><ion-spinner name="bubbles"></ion-spinner></p>
+       
+      </div>
+      <div class="button-options">
+        <button ion-button clear (click)="cancelUpload()">
+          <ion-icon name="close-circle" color="danger"></ion-icon>
+        </button>
+      </div>
+    </div>
+
+    <div class="button-options" *ngIf="uploadedVideo">
+      <button ion-button clear (click)="cancelSelection()">
+        Start Over
+      </button>
+    </div>
+
+  </div> -->
+        
+       
+        <ng-container *ngIf="this.ctype=='image'">
+      <div class="coverReal" [style.backgroundImage]="'url('+mediaURL+ coverImage+')'"
+        *ngIf="coverImage && coverImage !=''">
+      </div>
+    </ng-container>
+    
+        <ng-container *ngIf="this.ctype=='video'">
+          <div class="coverReal1" *ngIf="coverImage && coverImage !=''">
+         
+          <video [src]="mediaURL+ coverImage" height="150vh" width="100%" autoplay ></video>
+        </div>
+      </ng-container>
+    
+      </div>
+
+      <ion-button type="submit" expand="block" size="large" (click)="submit()" [disabled]="isLogin">
+        <span *ngIf="!isLogin">Submit</span>
+                <ion-spinner name="circles" *ngIf="isLogin"></ion-spinner>
+      </ion-button>
+
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,49 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>analysis-report</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div class="main_content_div">
+
+    <div class="user_div">
+      
+      <ion-buttons slot="start" class="menu_btn">
+        <ion-menu-button color="light"></ion-menu-button>
+      </ion-buttons>
+
+      <ion-label>Privacy Policy </ion-label>
+
+      
+    </div>
+
+    <div class="content_div">
+      
+
+      <div class="subject_content">
+        <div *ngIf="!loaded">
+          <div *ngFor="let item of [1,2,3,4,5,6,7,8]">
+            <h3>
+              <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+            </h3>
+            <p>
+              <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+            </p>
+            <p>
+              <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+            </p>
+            <h3>
+              <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+            </h3>
+          </div>
+        </div>
+        <p [innerHTML]="getContent()" *ngIf="loaded"></p>
+       
+      </div>
+
+
+
+    </div>
+  </div>
+</ion-content>

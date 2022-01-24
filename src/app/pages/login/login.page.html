@@ -1,0 +1,29 @@
+<ion-content>
+  <div class="main_content_div">
+    <img src="assets/imgs/rus.png" style="height: 150px; width: 150px; float: center;">
+    
+    <div>
+      <ion-label class="head_lbl">Login</ion-label>
+
+      <ion-input type="text" [(ngModel)]="email" placeholder="Email Address">
+        <ion-icon name="mail" slot="icon-only"></ion-icon>
+      </ion-input>
+
+      <ion-input type="password" [(ngModel)]="password" placeholder="Password">
+        <ion-icon name="key" slot="icon-only"></ion-icon>
+      </ion-input>
+
+      <ion-button type="submit" expand="block" [disabled]="loggedIn" (click)="login()">
+        <span *ngIf="!loggedIn">Login</span>
+                <ion-spinner name="circles" *ngIf="loggedIn"></ion-spinner>
+      </ion-button>
+
+      <ion-label class="forgot" (click)="goToForgot()">Forgot Password ?</ion-label>
+    </div>
+
+    <div class="bottom_div">
+      <ion-label (click)="goToRegister()">Don't have an account ? <span style="color: var(--ion-color-tetiary); font-size: 18px;">Create New</span></ion-label>
+    </div>
+
+  </div>
+</ion-content>

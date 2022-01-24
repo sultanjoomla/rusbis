@@ -1,0 +1,124 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>analysis-report</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div class="main_content_div">
+
+    <div class="user_div">
+      
+      <ion-buttons slot="start" class="menu_btn">
+        <ion-menu-button color="light"></ion-menu-button>
+      </ion-buttons>
+
+      <ion-label>Create New Campaign</ion-label>
+     
+      
+    </div>
+
+    <div class="content_div">
+      
+      <!-- <ion-label class="head_lbl">Set Campaign Details</ion-label> -->
+      
+      <div class="subject_content">
+        <!-- <small>NB: Minimum budget for Campaign Ads is <b>₦500.00</b></small> -->
+        <ion-label> Campaign Title</ion-label>
+        <ion-input type="text"  [(ngModel)]="ctitle" placeholder="Enter Campaign Title">
+          <ion-icon name="megaphone" slot="icon-only"></ion-icon>
+        </ion-input>
+        <!-- <ion-select [(ngModel)]="ctype" interface="action-sheet" mode="ios" (ionChange)="onCountryInput($event)"> -->
+          <ion-label> Campaign Type</ion-label>
+          <ion-select [(ngModel)]="ctype" interface="action-sheet" mode="ios">
+         
+          <ion-select-option value="image"> Image </ion-select-option>
+          <ion-select-option value="video"> Video </ion-select-option>
+        </ion-select>
+        <ion-label> Website / Social Media Link</ion-label>
+        <ion-input type="text" [(ngModel)]="url" placeholder="Enter Website / Social Media Link">
+          <ion-icon name="globe" slot="icon-only"></ion-icon>
+        </ion-input>
+
+       
+        <ion-label> Amount</ion-label>
+        <ion-input type="tel"  [(ngModel)]="amount" placeholder="Enter Budget Amount">
+          <ion-icon name="card-outline" slot="icon-only"></ion-icon>
+        </ion-input>
+        <ion-label> Campaign Description</ion-label>
+        <ion-textarea rows="6" placeholder="Describe your Campaign"  [(ngModel)]="bdescription">
+
+        </ion-textarea>
+        <ion-item lines="none">
+          <ion-label> Show campaign in all State?</ion-label>
+          <ion-toggle (ionChange)="onClick($event)" slot="end"></ion-toggle>
+        </ion-item>
+        <!-- <div class="video-section" *ngIf="selectedVideo">
+
+  
+
+    <div class="button-options" *ngIf="!uploadedVideo && !isUploading">
+      <button ion-button clear (click)="cancelSelection()">
+        <ion-icon name="close-circle" color="danger">Cancel</ion-icon>
+      </button>
+      <button ion-button clear (click)="uploadVideo()">
+        <ion-icon name="checkmark-circle" color="secondary">Upload Video</ion-icon>
+      </button>
+    </div>
+
+    <div *ngIf="isUploading">
+      <div class="uploading">
+        <p><ion-spinner name="bubbles"></ion-spinner></p>
+       
+      </div>
+      <div class="button-options">
+        <button ion-button clear (click)="cancelUpload()">
+          <ion-icon name="close-circle" color="danger"></ion-icon>
+        </button>
+      </div>
+    </div>
+
+    <div class="button-options" *ngIf="uploadedVideo">
+      <button ion-button clear (click)="cancelSelection()">
+        Start Over
+      </button>
+    </div>
+
+  </div> -->
+        <ng-container *ngIf="this.ctype=='image'">
+          <div class="coverPlaceholder" (click)="cover()" *ngIf="!coverImage || coverImage ==''">
+            <ion-icon name="cloud-upload-outline" color="primary"></ion-icon>
+            <p> Upload campaign image here! </p>
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="this.ctype=='video'">
+          <div class="coverPlaceholder" (click)="fileChoose()" *ngIf="!coverImage || coverImage ==''">
+            <ion-icon name="cloud-upload-outline" color="primary"></ion-icon>
+            <p> Upload campaign video here! </p>
+          </div>
+        </ng-container>
+       
+        <ng-container *ngIf="this.ctype=='image'">
+      <div class="coverReal" [style.backgroundImage]="'url('+mediaURL+coverImage+')'"
+        *ngIf="coverImage && coverImage !='' && this.ctype=='image'">
+      </div>
+    </ng-container>
+    
+        <ng-container *ngIf="this.ctype=='video'">
+          <div class="coverReal1" *ngIf="coverImage && coverImage !='' && this.ctype=='video'">
+         
+          <video [src]="coverImage" height="150vh" width="100%" controls ></video>
+        </div>
+      </ng-container>
+    
+      </div>
+
+      <ion-button type="submit" expand="block" size="large" (click)="proceed()" >
+       Proceed
+              
+      </ion-button>
+
+    </div>
+  </div>
+</ion-content>

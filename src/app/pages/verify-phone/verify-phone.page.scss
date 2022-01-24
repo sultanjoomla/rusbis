@@ -1,0 +1,48 @@
+.main_content_div{
+    width: 100%;
+    padding: 20px;
+   
+    height: 100vh;
+   
+  
+    background: linear-gradient( to right, #A020F0, #0665AC);
+
+    ion-label {
+        display: block;
+        color: #f3f3f3;
+    }
+
+    .head_lbl{
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    .simple_lbl{
+        text-align: center;
+        color: gray;
+        font-size: 14px;
+        margin-top: 20px;
+    }
+
+    .otp_div{
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .ip_class{
+        background: #f3f3f3;
+    }
+
+    .blue_lbl{
+        color: #fff;
+        text-align: center;
+        font-size: 14px;
+        margin-top: 5;
+    }
+    ion-button{
+        --border-radius: 15px;
+        margin-top: 20px;
+        height: 50px;
+        --background: linear-gradient( to right, #A020F0, #0665AC);
+    }
+}

@@ -1,0 +1,26 @@
+
+<ion-content>
+ 
+  <div class="main_content_div">
+    <div style="margin-top: 50%;">
+    <ion-label class="head_lbl">Account Verification</ion-label>
+
+    <ion-label class="simple_lbl">Enter Your OTP here</ion-label>
+
+    <div class="otp_div">
+      <ng-otp-input [config]="config" (onInputChange)="onOtpChange($event)"></ng-otp-input>
+    </div>
+
+    <ion-label class="simple_lbl">Did not you received any code ?</ion-label>
+
+    <ion-label class="blue_lbl" (click)="resend()">Resend a new code</ion-label>
+
+    <ion-button expand="block" type="submit" (click)="continue()">
+     Verify Account
+     
+    </ion-button>
+  </div>
+  </div>
+
+ 
+</ion-content>

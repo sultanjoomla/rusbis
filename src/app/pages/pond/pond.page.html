@@ -1,0 +1,151 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>analysis-report</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div class="main_content_div">
+
+    <div class="user_div">
+      
+      <ion-buttons slot="start" class="menu_btn">
+        <ion-menu-button color="light"></ion-menu-button>
+      </ion-buttons>
+
+      <ion-label>{{util.getString('Campaign Details')}} - #{{id}}</ion-label>
+
+      
+    </div>
+
+    <div class="content_div">
+      <div *ngIf="!loaded" style="display: flex;flex-direction: column;justify-content: center;align-items: center;">
+        <ion-spinner color="primary" name="crescent"></ion-spinner>
+      </div>
+
+      <div class="subject_content">
+        
+        <div class="main_content_div1" *ngIf="loaded">
+          <div *ngFor="let item of orders">
+
+          <!-- <ion-label class="titles"> {{util.getString('Full Campaign Information')}} </ion-label> -->
+          <div class="desc_div">
+            <div  class="border_bottom">
+              <div>
+
+                <ng-container *ngIf="item.ctype=='image'"> 
+                  
+                <div class="coverReal">
+                  <img [src]="mediaURL+item.fileUrl" onError="this.src='assets/imgs/nothing.png'">
+                </div>
+                </ng-container>
+
+                <ng-container *ngIf="item.ctype=='video'"> 
+                  
+                  <div class="coverReal">
+                    <video [src]="item.fileUrl" onError="this.src='assets/imgs/nothing.png'" height="150vh" width="320" controls></video>
+                  </div>
+                  </ng-container>
+
+                <p class="storeName">
+                  <span class="name"> {{item.adTitle}} </span>
+                  <span class="status"> {{item.status}} </span>
+                </p>
+               <p>
+                {{item.adDescription}}
+               </p>
+              </div>
+            </div>
+          </div>
+          <ion-label class="titles"> {{util.getString('Share Via')}} </ion-label>
+          <ion-row class="ion-align-items-center">
+           
+            <!-- <ion-col size="2">
+              <ion-button color="light" (click)="ShareGeneric('text')"><ion-icon name="share-social-outline"></ion-icon></ion-button>
+            </ion-col> -->
+            <ion-col size="3">
+              <ion-button color="primary" (click)="ShareFacebook()"><ion-icon name="logo-facebook"></ion-icon></ion-button>
+            </ion-col>
+            <ion-col size="3">
+                <ion-button color="success" (click)="ShareWhatsapp()"><ion-icon name="logo-whatsapp"></ion-icon></ion-button>
+            </ion-col>
+            <ion-col size="3">
+              <ion-button  color="secondary" (click)="SendTwitter()"><ion-icon name="logo-twitter"></ion-icon></ion-button>
+            </ion-col>   
+            <ion-col size="3">
+              <ion-button color="tertiary" (click)="SendInstagram()"><ion-icon name="logo-instagram"></ion-icon></ion-button>
+            </ion-col>    
+          </ion-row>
+          
+          <ion-label class="titles"> {{util.getString('Campaign Shared Details')}} </ion-label>
+          <div class="flex_div">
+            <ion-label><b> {{util.getString('Total Shared')}}</b> </ion-label>
+            <ion-label class="values">{{item.nos}}</ion-label>
+          </div>
+          <div class="flex_div2">
+            <ion-label> <ion-icon name="logo-whatsapp"></ion-icon> {{util.getString('Whatsapp')}} </ion-label>
+            <ion-label class="values">{{item.whats}}</ion-label>
+          </div>
+      
+          <div class="flex_div2">
+            <ion-label> <ion-icon name="logo-facebook"></ion-icon> {{util.getString('Facebook')}} </ion-label>
+            <ion-label class="values">{{item.face}}</ion-label>
+          </div>
+
+          <div class="flex_div2">
+            <ion-label> <ion-icon name="logo-instagram"></ion-icon> {{util.getString('Instagram')}} </ion-label>
+            <ion-label class="values">{{item.tele}}</ion-label>
+          </div>
+
+          <div class="flex_div2">
+            <ion-label> <ion-icon name="logo-twitter"></ion-icon> {{util.getString('Twitter')}} </ion-label>
+            <ion-label class="values">{{item.twitter}}</ion-label>
+          </div>
+
+      
+          <ion-label class="titles"> {{util.getString('Basic Details')}} </ion-label>
+          <!-- <div class="flex_div">
+            <ion-label> {{util.getString('Campaign Balance')}} </ion-label>
+            <ion-label class="values">₦{{item.balance | number}}.00</ion-label>
+          </div> -->
+          <div class="flex_div">
+            <ion-label> {{util.getString('Transaction ID')}} </ion-label>
+            <ion-label class="values">{{item.adid}}</ion-label>
+          </div>
+      
+          <div class="flex_div">
+            <ion-label> {{util.getString('Payment Method')}} </ion-label>
+            <ion-label class="values"> Card </ion-label>
+          </div>
+      
+          <div class="flex_div">
+            <ion-label> {{util.getString('Created On')}} </ion-label>
+            <ion-label class="values"> {{item.created_at}} </ion-label>
+          </div>
+      
+      
+         
+          <ion-button size="large"  expand="block" *ngIf="item.status === 'inactive'" (click)="renew(item)">
+            Renew Campaign<ion-icon name="git-compare-outline"></ion-icon>
+              
+            </ion-button>
+        
+        </div>
+      
+        </div>
+
+
+
+      </div>
+
+
+
+    </div>
+  </div>
+</ion-content>
+<!-- <ion-footer no-border *ngFor="let item of orders">
+	<ion-button size="large"  expand="block" *ngIf="item.pstatus === 'Not Paid'">
+	Pay Now
+		
+	</ion-button>
+</ion-footer> -->

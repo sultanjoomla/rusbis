@@ -1,0 +1,64 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div class="main_content_div">
+
+    <ion-buttons slot="start" class="menu_btn">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+
+    <div class="user_div">
+      
+      <ion-label>Others</ion-label>
+    </div>
+
+      <div class="content_div">
+       
+        <div class="options">
+
+          <ion-item lines="none" detail="" class="ion-activatable ripple-parent" (click)="update()">
+            <ion-icon name="briefcase-outline" slot="start"></ion-icon>
+            <ion-label> Business Settings </ion-label>
+            <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+          </ion-item>
+         
+          <ion-item lines="none" detail="" class="ion-activatable ripple-parent" (click)="goToAbout()">
+            <ion-icon name="information-circle-outline" slot="start"></ion-icon>
+            <ion-label> About Us </ion-label>
+            <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+          </ion-item>
+      
+          <ion-item lines="none" detail="" class="ion-activatable ripple-parent" (click)="reset()">
+            <ion-icon name="key-outline" slot="start"></ion-icon>
+            <ion-label>Change Password</ion-label>
+            <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+          </ion-item>
+          
+          <ion-item lines="none" detail="" class="ion-activatable ripple-parent" (click)="goToTerms()">
+            <ion-icon name="newspaper-outline" slot="start"></ion-icon>
+            <ion-label> Terms and Conditions </ion-label>
+            <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+          </ion-item>
+
+          <ion-item lines="none" detail="" class="ion-activatable ripple-parent" (click)="privacy()">
+            <ion-icon name="trail-sign-outline" slot="start"></ion-icon>
+            <ion-label> Privacy Policy </ion-label>
+            <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+          </ion-item>
+      
+
+          <ion-item lines="none" detail="" class="ion-activatable ripple-parent" (click)="contact()">
+            <ion-icon name="mail-outline" slot="start"></ion-icon>
+            <ion-label> Contact Us </ion-label>
+            <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+          </ion-item>
+        
+        </div>
+
+      </div>
+  </div>
+</ion-content>

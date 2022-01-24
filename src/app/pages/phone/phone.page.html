@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button mode="md"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main_content_div">
+    <ion-label class="head_lbl">Verify Your Phone Number</ion-label>
+
+    <ion-label class="simple_lbl">We have sent you an SMS with a code to the number</ion-label>
+
+    <div class="phone_div">
+      <ion-label>+234</ion-label>
+      <ion-input type="text" placeholder="Phone"></ion-input>
+    </div>
+
+    <ion-button (click)="goToVerifyPhone()" expand="block">
+      Continue
+    </ion-button>
+  </div>
+</ion-content>

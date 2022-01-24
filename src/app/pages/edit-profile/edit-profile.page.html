@@ -1,0 +1,28 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>edit-profile</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div class="main_content_div">
+    <div class="user_div">
+      <ion-icon name="arrow-back-outline" (click)="goBack()" color="light" class="back_btn"></ion-icon>
+      <div class="user_back" [style.backgroundImage]="'url(assets/imgs/courier.png)'"></div>
+    </div>
+
+    <div class="content_div">
+      <ion-input type="text" placeholder="" value="{{userDetails.fullname}}" [disabled]="btnText == 'Edit Profile'"></ion-input>
+
+
+      <ion-input type="text" placeholder="Email Address" value="{{userDetails.email}}" [disabled]="btnText == 'Edit Profile'"></ion-input>
+
+      <ion-input type="text" placeholder="Mobile No." value="{{userDetails.phone}}" [disabled]="btnText == 'Edit Profile'"></ion-input>
+
+      <ion-button (click)="EditProfile()" expand="block">
+        {{btnText}}
+      </ion-button>
+    </div>
+  </div>
+
+</ion-content>
